@@ -9,7 +9,7 @@ with open (file_path, "rb") as f:
 print (original_encoding)
 
 # %% Read file in latin1 encoding
-df= pd.read_csv(file_path, encoding = "latin1")
+df= pd.read_csv(file_path, encoding = "cp1252")
 print(df.head())
 
 # %%
@@ -64,5 +64,6 @@ print(df.dtypes)
 
 #%%
 staging_path = "/Users/pann017/prac/supply-chain-analytics-platform/data/DataCoSupplyChain_staging.csv"
-df.to_csv(staging_path, index=False, encoding="utf-8")
+df.to_csv(staging_path, index=False)
 print("DataCoSupplyChain_staging.csv saved")
+
