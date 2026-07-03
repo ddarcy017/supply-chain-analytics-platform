@@ -44,9 +44,11 @@ print((df["Order_Time"] == df["Shipping_Time"]).all())
 df.drop(columns=["Order_Date_Dateorders", "Shipping_Date_Dateorders"], inplace=True)
 
 # %%
-df = df[sorted(df.columns)]
-
 cols = df.columns.tolist()
+cols.remove("Order_Date")
+order_date_index = cols.index("Order_Customer_ID")
+cols.insert(order_date_index + 1, "Order_Date")
+
 cols.remove("Order_Time")
 order_date_index = cols.index("Order_Date")
 cols.insert(order_date_index + 1, "Order_Time")
